@@ -20,7 +20,7 @@ domainUrl: 'https://yangmingxian.com/'
 baseurl: ''
 
 # 吐个槽地址，会在chat页面中重定向到该地址
- tucaoUrl: https://support.qq.com/product/257051
+tucaoUrl: 'https://support.qq.com/product/257051' 
 
 # 菜单
 menu:
