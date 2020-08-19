@@ -1,14 +1,7 @@
 ---
-layout: post
+layout: mypost
 title: "ANLP复习提纲"
-subtitle: "Accelerated Natural Language Processing"
-author: "Mingxian Yang"
-header-img: "img/post-bg-infinity.jpg"
-header-mask: 0.3
-mathjax: true
-tags:
-  - 笔记
-  - NLP
+category: [NLP]
 ---
 
 ## 1. Generative probablistic models
