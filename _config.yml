@@ -6,7 +6,7 @@
 # Site
 title: YMX Blog
 subtitle:
-description: Hi, there. 欢迎来到 Mingxian 的博客
+description: 欢迎来到 Mingxian 的博客
 author: Mingxian Yang
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: zh-Hans
@@ -154,7 +154,7 @@ menu_icons:
 #scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-scheme: Pisces
+scheme: Muse
 
 # ---------------------------------------------------------------
 # Font Settings
