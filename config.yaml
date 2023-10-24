@@ -1,7 +1,7 @@
 baseurl: https://yangmingxian.com
 languageCode: en-us
 theme: hugo-theme-stack
-paginate: 5
+paginate: 10
 title: YMX Blog
 copyright: Mingxian Yang
 
@@ -12,12 +12,12 @@ languages:
         weight: 1
         params:
             description: Example description
-    zh-cn:
-        languageName: 中文
-        title: YMX Blog
-        weight: 2
-        params:
-            description: 演示说明
+    # zh-cn:
+    #     languageName: 中文
+    #     title: YMX Blog
+    #     weight: 2
+    #     params:
+    #         description: 演示说明
 
 # Change it to your Disqus shortname before using
 disqusShortname: hugo-theme-stack
@@ -46,7 +46,7 @@ params:
 
     footer:
         since: 2018
-        customText: 当你下定决心时 结果便成了副产物
+        customText: 当你下定决心时 结局便成了副产物
 
     dateFormat:
         published: Jan 02, 2006
@@ -196,19 +196,20 @@ menu:
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/CaiJimmy/hugo-theme-stack
+          url: https://github.com/yangmingxian
           params:
               icon: brand-github
 
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com
+
+        - identifier: email
+          name: Email
+          url: mailto:yangmingxian2015@gmail.com
           params:
-              icon: brand-twitter
+              icon: mail
 
         - identifier: bilibili
           name: Bilibili
-          url: https://Bilibili.com/CyberStreamer
+          url: https://space.bilibili.com/22212765
           params:
               icon: brand-bilibili
 

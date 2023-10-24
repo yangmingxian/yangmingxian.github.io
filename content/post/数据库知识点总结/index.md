@@ -1,0 +1,138 @@
+---
+title: 数据库基础知识点总结
+author: Mingxian Yang
+date: 2020-08-24 18:10:00 +0800
+categories: [Learning Notes]
+tags: [Database]
+---
+
+## 基本概念
+
+### 1. 数据
+(1) 数据的定义：对客观事物的符号表示，如图形符号、数字、字母等，数据是数据库中存储的基本对象。
+(2) 数据的种类：文字、图形、图形、声音
+(3) 数据的特点：数据和其语义是不可分的
+
+### 2. 数据库
+数据库（Database 简称 DB）是按照数据结构来组织、存储和管理数据的仓库。
+
+### 3. 数据库管理系统（比如MySQL）
+(1) 数据库管理系统（Database Management System 简称 DBMS）是一种操纵和管理数据库的大型软件，用于建立、使用和维护数据库。
+(2) 关系型数据库管理系统统称为 RDBMS ，R 指的是Relation。
+(3) DBMS的作用：它对数据库进行你统一的管理和控制，以保证数据库的安全性和完整性。
+
+### 4. 数据库系统
+数据库系统（Database System 简称 DBS），是由数据库及其管理软件组成的系统。
+
+### 5. 数据库管理员
+数据库管理员（Database Administrator 简称 DBA），负责全面管理和控制数据库系统。
+
+### 6. DBA，DBMS, DB 和 DBS 之间的关系
+![01](01.png)
+
+### 7. 数据库的优点
+(1) 数据按一定的数据模型组织、描述和储存  
+(2) 可为各种用户共享  
+(3) 冗余度较小，节省存储空间   
+(4) 易于扩展，编写有关数据库的应用程序  
+
+## 数据库管理系统（DBMS）
+
+### 1. DBMS的主要功能
+
+#### (1) 数据定义功能：提供数据定义语言（DDL）  
+
+用于定义数据库的所有特性和属性，尤其是行布局、列定义、键列（有时候是选键方法）、文件位置和存储策略，包括命令：  
+DROP（删除数据库） 
+```sql 
+删除数据库：drop database if exists 数据库名
+```
+CREATE（创建数据库） 
+```
+创建表：create table if exists 表名(列名 列名约束)
+```
+ALTER（修改数据库）
+```sql
+添加列名：alter table 表名 add 列名 约束条件  
+修改列名：alter table 表名 change 旧列名 新列名 数据类型  
+修改列字段数据类型：alter table 表名 modify 列名 数据类型  
+删除列名：alter table 表名 drop 列名  
+修改表名：alter table 表名 rename 新表名
+```
+GRANT（赋予权限）  
+REVIOKE（从当前用户或组中取消权限）  
+TRUNCATE（只删除表中所有数据，不删除表的结构）  
+<font color="LightSalmon"> 注意：</font>truncate table 命令将快速删除数据表中的所有记录,但保留数据表结构。这种快速删除与delete from数据表的输出全部数据表记录不一样,delete命令删除的数据将存储在系统回滚段中，需要的时候，数据可以回滚恢复，而truncate命令删除的数据是不可恢复的。
+
+#### (2) 数据操纵功能：提供数据操纵语言（DML）
+
+操纵数据实现对数据库的基本操作：
+SELECT（查询）
+```sql  
+select form 表名 where 条件(条件1 and 条件2)
+```
+INSERT（插入）  
+```sql  
+insert into 表名(列1,列2) values('','')('','')('','')
+```
+DELETE（删除）
+```sql  
+delete form 表名 where 条件
+```  
+UPDATE（修改）
+```sql  
+update 表名 set 列名='',列名=''where 条件
+```  
+
+#### (3) 数据库的运行管理  
+a. 保证数据的安全性、完整性
+b.  多用户对数据的并发使用
+c. 发生故障后的系统恢复
+
+#### (4) 数据库的建立和维护功能（实用程序）
+a. 数据库数据批量装载  
+b. 数据库转储  
+c. 介质故障的修复  
+d. 数据库的重组织
+e. 性能监视
+
+## MySQL 的使用
+
+### 用命令行来执行数据库（DDL 数据库定义语言）
+#### (1) 输入登陆密码
+
+#### (2) 显示 MySQL 中的所有数据库
+    show databases;
+
+#### (3) 退出 MySQL
+使用 quit、exit、\\q 退出MySQL
+
+#### (4) 创建数据库（create database 数据库名）
+    create database school  
+
+创建数据库时，判断是否具有同名数据库再创建  
+
+    create database school if not exists school   
+    
+创建数据库后，为数据库设置字符编码  
+
+    alter database school character set utf8   
+
+#### (5) 删除数据库（drop database 数据库名）
+    drop database school
+
+#### (6) 使用某个数据库（use 数据库名）
+
+<font color="LightSalmon"> 注意：</font>进入到该数据库，例如你新建表的时候要先写这句话，这样保证了我的表创建在该数据库下，反之会默认放置在默认的数据库中。
+
+    use school  
+
+#### (7) 创建表（create table 表名 (列名1 数据类型,...)）
+
+    create table if not exists user(id int not null primary key, username varvhar(40), password varchar(50), power int not null)
+
+<font color="LightSalmon"> 注意: 关于数据类型:char和varchar</font>  
+char(20): 分配20个空间，当只使用5个空间时，没用的空间会被空格填补  
+varchar(20)： 分配20个空间，当只使用5个空间时，那么空间会占用6个，其中一个保存数据长度。  
+
+未完待续...
