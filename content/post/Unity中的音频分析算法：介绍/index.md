@@ -2,6 +2,7 @@
 title: Unity中的音频分析算法：介绍
 author: Mingxian Yang
 date: 2021-07-01 18:10:00 +0800
+description: 音乐游戏中大量的节拍需要大量的人力和时间成本，那么为什么不用代码分析节奏然后自动生成呢？Audiosurf的的创造者Dylan Fitterer开创了使用代码生成音游谱面的先河，并且取得了不错的成果。节拍映射成为了音乐游戏发展的一个重要方向。
 categories: [Game Design]
 tags: [Unity3D]
 ---

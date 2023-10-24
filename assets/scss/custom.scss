@@ -1,0 +1,536 @@
+//  ~\blog\assets\scss\custom.scss
+
+// 页面基本配色
+:root {
+    // 全局顶部边距
+    --main-top-padding: 30px;
+    // 全局卡片圆角
+    --card-border-radius: 25px;
+    // 标签云卡片圆角
+    --tag-border-radius: 8px;
+    // 卡片间距
+    --section-separation: 40px;
+    // 全局字体大小
+    --article-font-size: 1.8rem;
+    // 行内代码背景色
+    --code-background-color: #f8f8f8;
+    // 行内代码前景色
+    --code-text-color: #e96900;
+
+    // 暗色模式下样式
+    &[data-scheme="dark"] {
+        // 行内代码背景色
+        --code-background-color: #ff6d1b17;
+        // 行内代码前景色
+        --code-text-color: #e96900;
+    }
+}
+
+//------------------------------------------------------
+// 修复引用块内容窄页面显示问题
+a {
+    word-break: break-all;
+}
+
+code {
+    word-break: break-all;
+}
+
+//---------------------------------------------------
+// 文章内容图片圆角阴影
+.article-page .main-article .article-content {
+    img {
+        max-width: 96% !important;
+        height: auto !important;
+        border-radius: 8px;
+    }
+}
+
+//------------------------------------------------
+// 文章内容引用块样式
+.article-content {
+    blockquote {
+        border-left: 6px solid #358b9a1f !important;
+        background: #3a97431f;
+    }
+}
+
+// ---------------------------------------
+// 代码块基础样式修改
+.highlight {
+    max-width: 102% !important;
+    background-color: var(--pre-background-color);
+    padding: var(--card-padding);
+    position: relative;
+    border-radius: 20px;
+    margin-left: -7px !important;
+    margin-right: -12px;
+    box-shadow: var(--shadow-l1) !important;
+
+    &:hover {
+        .copyCodeButton {
+            opacity: 1;
+        }
+    }
+
+    // keep Codeblocks LTR
+    [dir="rtl"] & {
+        direction: ltr;
+    }
+
+    pre {
+        margin: initial;
+        padding: 0;
+        margin: 0;
+        width: auto;
+    }
+}
+
+// light模式下的代码块样式调整
+[data-scheme="light"] .article-content .highlight {
+    background-color: #fff9f3;
+}
+
+[data-scheme="light"] .chroma {
+    color: #ff6f00;
+    background-color: #fff9f3cc;
+}
+
+//-------------------------------------------
+// 设置选中字体的区域背景颜色
+//修改选中颜色
+::selection {
+    color: #fff;
+    background: #34495e;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+
+    &:hover {
+        color: var(--accent-color-darker);
+    }
+
+    &.link {
+        color: #4288b9ad;
+        font-weight: 600;
+        padding: 0 2px;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+//-------------------------------------------------
+//文章封面高度更改
+.article-list article .article-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+
+    @include respond(md) {
+        height: 200px;
+    }
+
+    @include respond(xl) {
+        height: 305px;
+    }
+}
+
+//---------------------------------------------------
+// 全局页面布局间距调整
+.main-container {
+    min-height: 100vh;
+    align-items: flex-start;
+    padding: 0 15px;
+    gap: var(--section-separation);
+    padding-top: var(--main-top-padding);
+
+    @include respond(md) {
+        padding: 0 37px;
+    }
+}
+
+//--------------------------------------------------
+//页面三栏宽度调整
+.container {
+    margin-left: auto;
+    margin-right: auto;
+
+    .left-sidebar {
+        order: -3;
+        max-width: var(--left-sidebar-max-width);
+    }
+
+    .right-sidebar {
+        order: -1;
+        max-width: var(--right-sidebar-max-width);
+
+        /// Display right sidebar when min-width: lg
+        @include respond(lg) {
+            display: flex;
+        }
+    }
+
+    &.extended {
+        @include respond(md) {
+            max-width: 1024px;
+            --left-sidebar-max-width: 25%;
+            --right-sidebar-max-width: 22% !important;
+        }
+
+        @include respond(lg) {
+            max-width: 1280px;
+            --left-sidebar-max-width: 20%;
+            --right-sidebar-max-width: 30%;
+        }
+
+        @include respond(xl) {
+            max-width: 1453px; //1536px;
+            --left-sidebar-max-width: 15%;
+            --right-sidebar-max-width: 25%;
+        }
+    }
+
+    &.compact {
+        @include respond(md) {
+            --left-sidebar-max-width: 25%;
+            max-width: 768px;
+        }
+
+        @include respond(lg) {
+            max-width: 1024px;
+            --left-sidebar-max-width: 20%;
+        }
+
+        @include respond(xl) {
+            max-width: 1280px;
+        }
+    }
+}
+
+//-------------------------------------------------------
+//全局页面小图片样式微调
+.article-list--compact article .article-image img {
+    width: var(--image-size);
+    height: var(--image-size);
+    object-fit: cover;
+    border-radius: 17%;
+}
+
+
+
+
+
+
+//  ~\blog\assets\scss\custom.scss
+
+//------------------------------------------------
+//将滚动条修改为圆角样式
+//菜单滚动条美化
+.menu::-webkit-scrollbar {
+    display: none;
+}
+
+// 全局滚动条美化
+html {
+    ::-webkit-scrollbar {
+        width: 20px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #d6dee1;
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #a8bbbf;
+    }
+}
+
+
+//  ~\blog\assets\scss\custom.scss
+
+//--------------------------------------------------
+//归档页面双栏
+/* 归档页面两栏 */
+@media (min-width: 1024px) {
+    .article-list--compact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: none;
+        box-shadow: none;
+        gap: 1rem;
+
+        article {
+            background: var(--card-background);
+            border: none;
+            box-shadow: var(--shadow-l2);
+            margin-bottom: 8px;
+            border-radius: 16px;
+        }
+    }
+}
+
+
+//  ~\blog\assets\scss\custom.scss
+
+//--------------------------------------------------
+//链接三栏
+@media (min-width: 1024px) {
+    .article-list--compact.links {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; //三个1fr即为三栏,两个1fr则为双栏,以此类推即可.
+        background: none;
+        box-shadow: none;
+        gap: 1rem;
+
+        article {
+            background: var(--card-background);
+            border: none;
+            box-shadow: var(--shadow-l2);
+            margin-bottom: 8px;
+            border-radius: var(--card-border-radius);
+
+            &:nth-child(odd) {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+
+
+//  ~\blog\assets\scss\custom.scss
+
+//---------------------------------------------------------
+//首页欢迎板块样式
+.welcome {
+    color: var(--card-text-color-main);
+    background: var(--card-background);
+    box-shadow: var(--shadow-l2);
+    border-radius: 30px;
+    display: inline-block;
+}
+
+// 👋emoji实现摆动效果
+.shake {
+    display: inline-block;
+    animation: shake 1s;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: shake;
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normal;
+    animation-delay: 2s;
+
+    @keyframes shake {
+        0% {
+            transform: rotate(0);
+        }
+
+        25% {
+            transform: rotate(45deg) scale(1.2);
+        }
+
+        50% {
+            transform: rotate(0) scale(1.2);
+        }
+
+        75% {
+            transform: rotate(45deg) scale(1.2);
+        }
+
+        100% {
+            transform: rotate(0);
+        }
+    }
+}
+
+// 实现字符跳动动画
+.jump-text1 {
+    display: inline-block;
+    animation: jump 0.5s 1;
+}
+
+.jump-text2 {
+    display: inline-block;
+    animation: jump 0.5s 1;
+    animation-delay: 0.1s;
+}
+
+.jump-text3 {
+    display: inline-block;
+    animation: jump 0.5s 1;
+    animation-delay: 0.2s;
+}
+
+.jump-text4 {
+    display: inline-block;
+    animation: jump 0.5s 1;
+    animation-delay: 0.3s;
+}
+
+.jump-text5 {
+    display: inline-block;
+    animation: jump 0.5s 1;
+    animation-delay: 0.4s;
+}
+
+.jump-text6 {
+    display: inline-block;
+    animation: jump 0.5s 1;
+    animation-delay: 0.5s;
+}
+
+.jump-text7 {
+    display: inline-block;
+    animation: jump 0.5s 1;
+    animation-delay: 0.6s;
+}
+
+.jump-text8 {
+    display: inline-block;
+    animation: jump 0.5s 1;
+    animation-delay: 0.7s;
+}
+
+.jump-text9 {
+    display: inline-block;
+    animation: jump 0.5s 1;
+    animation-delay: 0.9s;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+//  ~\blog\assets\scss\custom.scss
+
+//--------------------------------------------------
+//引入左上角返回按钮
+.back-home {
+    background: var(--card-background);
+    border-radius: var(--tag-border-radius);
+    color: var(--card-text-color-tertiary);
+    margin-right: 0.1rem;
+    margin-top: 24px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    padding: 10px 20px 10px 15px;
+    transition: box-shadow 0.3s ease;
+    box-shadow: var(--shadow-l3);
+    font-family: 'Lato', serif;
+
+    &:hover {
+        box-shadow: var(--shadow-l2);
+    }
+
+    svg {
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+    }
+
+    span {
+        font-weight: 500;
+        white-space: nowrap;
+    }
+}
+
+.main-container .right-sidebar {
+    order: 2;
+    max-width: var(--right-sidebar-max-width);
+
+    /// Display right sidebar when min-width: lg
+    @include respond(lg) {
+        display: flex;
+    }
+}
+
+main.main {
+    order: 1;
+    min-width: 0;
+    max-width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-separation);
+
+    @include respond(md) {
+        padding-top: var(--main-top-padding);
+    }
+}
+
+
+
+// e.g.  在 Windows 操作系统中，「复制」功能的快捷键是：<kbd>CTRL</kbd> + <kbd>C</kbd>
+// 键盘标签样式
+kbd {
+    margin: 0 .1em;
+    padding: .1em .6em;
+    font-size: .8em;
+    color: #242729;
+    background: #fff;
+    border: 1px solid #adb3b9;
+    border-radius: 3px;
+    box-shadow: 0px 1px 0 rgba(12, 13, 14, 0.2), 0 0 0 2px #fff inset;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-family: monospace;
+}
+
+
+
+
+.site-name,
+.site-meta,
+.menu,
+.article-details,
+.widget-title.section-title,
+.sidebar.right-sidebar.sticky {
+    // font-family: 'Long Cang', cursive;
+    // font-family: 'Ma Shan Zheng', cursive;
+    // font-family: 'Noto Sans SC', sans-serif;
+    font-family: 'Lato', serif;
+    // font-family: 'Zhi Mang Xing', cursive;
+}
+
+body,
+.widget--toc,
+.article-content {
+    // font-family: 'Long Cang', cursive;
+    // font-family: 'Ma Shan Zheng', cursive;
+    // font-family: 'Noto Sans SC', sans-serif;
+    font-family: 'Noto Serif SC', serif;
+    // font-family: 'Zhi Mang Xing', cursive;
+}

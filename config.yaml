@@ -1,5 +1,5 @@
 baseurl: https://yangmingxian.com
-languageCode: en-us
+languageCode: en-us 
 theme: hugo-theme-stack
 paginate: 10
 title: YMX Blog
@@ -12,6 +12,7 @@ languages:
         weight: 1
         params:
             description: Example description
+
     # zh-cn:
     #     languageName: 中文
     #     title: YMX Blog
@@ -31,7 +32,7 @@ DefaultContentLanguage: en
 
 # Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
 # This will make .Summary and .WordCount behave correctly for CJK languages.
-hasCJKLanguage: false
+hasCJKLanguage: true
 
 permalinks:
     post: /p/:slug/
