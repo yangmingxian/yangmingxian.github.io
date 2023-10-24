@@ -210,7 +210,7 @@ menu:
           name: Bilibili
           url: https://Bilibili.com/CyberStreamer
           params:
-              icon: home
+              icon: brand-bilibili
 
 related:
     includeNewer: true
