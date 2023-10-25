@@ -2,8 +2,8 @@
 
 <img align="right" width="150" alt="logo" src="https://user-images.githubusercontent.com/5889006/190859553-5b229b4f-c476-4cbd-928f-890f5265ca4c.png">
 
-我的Hugo博客，记录了生活和技术的点点滴滴    
-My Hugo blog, records every bit of life and tech.
+YangMingxian的博客，记录了生活和技术的点点滴滴    
+Mingxian Yang's blog, recording every bit of life and tech.
 </br></br>
 
 [![Built on GitHub](https://img.shields.io/badge/Build-Passing-86A789)](https://github.com/yangmingxian/yangmingxian.github.io/actions)
