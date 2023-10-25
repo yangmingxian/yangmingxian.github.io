@@ -3,6 +3,7 @@ title: Unity中的音频分析算法：使用 Unity API 进行实时音频分析
 author: Mingxian Yang
 date: 2021-07-02 18:10:00 +0800
 description: 对于音频的实时分析，我们通过检测场景中播放的音频，获取其中最接近的节拍。虽然实时分析中会有一些限制，但是它也可以作为适用于多种样用例的解决方案。另外，它也作为了进行音频预处理分析的前置实现。
+image: FT.png
 categories: [Game Design]
 tags: [Unity3D]
 ---

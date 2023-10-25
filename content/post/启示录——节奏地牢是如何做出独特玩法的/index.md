@@ -3,6 +3,7 @@ title: 启示录——节奏地牢是如何做出独特玩法的
 author: Mingxian Yang
 date: 2023-08-19 18:10:00 +0800
 description: 开发者Ryan Clark的访谈录，想从中找到一些关于节奏检测的灵感，我发现我学到了一些其他方面的东西。Roguelike元素和节奏游戏结合的方式创造了独特的体验，他在自己的博客中详细讲述了这款游戏从创意原型到不断优化调整，创造出独特玩法的过程。
+image: FT.jpg
 categories: [Game Design]
 tags: [Revelation]
 ---

@@ -3,6 +3,7 @@ title: Unity中的音频分析算法：预处理音频分析
 author: Mingxian Yang
 date: 2022-03-21 18:10:00 +0800
 description: 在进行实时分析时，我们发现我们必须稍微滞后于当前播放的音频才能检测节拍。我们也只能使用在音频中直到当前时间检测到的频谱数据来做计算，这些限制让我们的音频分析变得很受制约。不过我们可以先对音频进行预处理来解决这些限制。
+image: FT.png
 categories: [Game Design]
 tags: [Unity3D]
 ---

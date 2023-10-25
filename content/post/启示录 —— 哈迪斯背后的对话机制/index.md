@@ -3,6 +3,7 @@ title: 启示录——哈迪斯背后的NPC对话机制
 author: Mingxian Yang
 date: 2023-08-19 18:10:00 +0800
 description: 主要介绍了哈迪斯(Hades)中NPC的对话机制，开发者是使用什么样的机制，在浩如烟海的文本中，选择最适合当前代入感的对话的，这不仅给玩家带来游玩过程的临场感，而且还对碎片化世界观的塑造创造了便利。
+image: FT.jpg
 categories: [Game Design]
 tags: [Revelation]
 ---

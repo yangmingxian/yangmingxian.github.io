@@ -3,6 +3,7 @@ title: 使用Barracuda在Unity3D中实现图像识别
 author: Mingxian Yang
 date: 2022-10-29 18:10:00 +0800
 description: 介绍使用 Barracuda 在 Unity3D 中运行机器学习模型。这允许您在 Unity 视频游戏引擎中以 onnx 的格式运行大多数的机器学习模型，以便在 Android 或 iOS 上提供跨平台支持。这个教程是我在学习过程中的学习分享，适合新手作为一个学习参考。
+image: FT.png
 categories: [Game Design]
 tags: [Unity3D]
 ---
