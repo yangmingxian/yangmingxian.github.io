@@ -13,10 +13,10 @@ tags: [Unity3D]
 ---
 > (已过时，待更新) 在这个Unity 教程中，我将介绍使用 Barracuda 在 Unity3D 中运行机器学习模型。这允许您在 Unity 视频游戏引擎中以 onnx 的格式运行大多数的机器学习模型，以便在 Android 或 iOS 上提供跨平台支持。这个教程是我在学习过程中的学习分享，不会涉及到机器学习的内容以及集成Unity3D过程中很深的内容，很适合新手作为一个学习参考。
 
-### 前言
+## 前言
 最近我暂时搁置了我正在独立开发的游戏，因为我想让自己的独立作品包含一些新鲜玩意。我一直尝试在Unity3D中集成一个节奏识别的深度学习网络，我参考并且尝试了一些解决方案，但是都不能达到一个类似于Conda的环境支持。当然，开发环境中运行深度学习已不是什么新鲜事了，但是在runtime中运行任意一个深度学习网络，在玩家游玩的过程中使用各式各样的机器学习模型才是我所追求的。  
 
-### 解决方案对比
+## 解决方案对比
 我尝试了一些Unity3D官方提供的和其他我所找到的解决防范，下面简单列举一下它们的优劣：
 - Python for unity：
    - 使用简单，官方提供了完整的安装包，可以直接安装
@@ -51,7 +51,7 @@ tags: [Unity3D]
 *//TODO : 如果有需要的话，我可以单独把每一个解决方案都写一下大致的集成教程，那可能涉及到很多零散的内容。*
 
 ---
-### 1. 准备深度学习模型
+## 准备深度学习模型
 我不准备在这里讲很多机器学习的内容。这里你需要将深度学习模型转换为onnx的格式，这部分可以看pytorch或者onnx的教程。  
 
 [**模型的下载链接**](https://github.com/yangmingxian/Unity-Image-Classification/blob/a6e874b5684537f54cea46187b6ff2f5bca174fe/Assets/Models/ImageClass.onnx)  
@@ -68,13 +68,13 @@ tags: [Unity3D]
 - 输出：float32[1,1000] 这是将索引映射到标签的分数，分数越大，对应标签的可能性越大
 
 
-### 2. Unity的场景设置 
+## Unity的场景设置 
 Unity场景的设置很简单，我们只需要一个Canvas：其中有一个RawImage用于显示手机摄像机返回的图像，还有一个Button来交互，button上的文字就是识别的结果。除此之外，我还设置了一个空物体来存放推理和识别的脚本。
   
 ![场景](002.png)
 
-### 3. 关键脚本与流程
-#### 3.1 手机摄像头的显示
+## 关键脚本与流程
+### 手机摄像头的显示
 
 首先是声明一个RawImage用来存放和显示摄像头的图像，这里我们额外设置了一个AspectRatioFitter组件用来设置将RawImage的比例设置成与手机屏幕比例一致。
 
@@ -101,7 +101,7 @@ Unity场景的设置很简单，我们只需要一个Canvas：其中有一个Raw
 ```
 
 
-#### 3.2 图像数据的预处理
+### 图像数据的预处理
 得到原始的摄像机的图像之后，第一步要做的就是裁剪和重采样。因为我们的模型需要的输入是float32[1,224,224,3]   
 - 首先第一个参数代表batch_size是1，我们每次读取一张图片就好
 - 第2,3个参数224,224代表的是图像的大小
@@ -155,7 +155,7 @@ void OnCompleteReadback(AsyncGPUReadbackRequest request)
 
 
 
-#### 3.3 模型的推理
+### 模型的推理
 首先引用我们需要的模型文件，这是Barracuda提供给我们的简单应用。ModelLoader允许我们引用模型，WorkerFactory允许我们构建推理引擎。这里WorkerFactory.Type.ComputePrecompiled使用的是GPU推理，当然你需要根据平台和模型来决定最适合的引擎，有基于CPU的引擎等。  
 
 ```csharp
@@ -192,7 +192,7 @@ void OnCompleteReadback(AsyncGPUReadbackRequest request)
     }
 ```
 
-#### 3.4 根据Index得到标签结果
+### 根据Index得到标签结果
 
 在一开始我们可以设置一个string[] 存放结果标签，使用index来查表获得结果即可。流程从上一部分的显示结果输出到UI Text开始。
 ```csharp
@@ -207,14 +207,14 @@ void OnCompleteReadback(AsyncGPUReadbackRequest request)
 
 
 
-### 4. 结果 & Outro
+## 结果 & Outro
 
 经过测试，我的手机毫无压力的得到了不错的识别结果。 
 注：在代码里我强制使用了30帧来节约资源。识别的结果如下:  
 ![识别结果截图](003.png)
 
 
-#### 4.1 未来的方向
+### 未来的方向
 其实这只是一个很普通简单的例子，真正有价值的是，在游戏引擎里面使用恰当的机器学习模型能让游戏变得更加有趣。能在Unity3D里面实现物体识别，短期就能实时其中里面做到物体追踪，图像分割。更加长远的目标是用让深度学习的模型来构建游戏内容，比如一个更智能的卡牌游戏AI，比如一个完全由机器学习模型生成的NPC，或者NPC讲故事时，故事的文本完全由模型生成。这样一来，游戏的随机性会得到质的飞跃。
 
 
@@ -226,7 +226,7 @@ void OnCompleteReadback(AsyncGPUReadbackRequest request)
 - [**工程文件地址**](https://github.com/yangmingxian/Unity-Image-Classification)  
 
 
-### 5. Others
+## Others
 - [**作者博客：YMX's Site**](https://yangmingxian.com/)
 - [**作者B站视频：CyberStreamer**](https://space.bilibili.com/22212765)
 

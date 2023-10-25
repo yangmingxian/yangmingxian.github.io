@@ -10,7 +10,7 @@ tags: [Unity3D]
 
 
 
-### 本系列文章： 
+## 本系列文章
 
 [**Unity中的音频分析算法：介绍**]({% post_url 2021-07-01-Unity中的音频分析算法：介绍 %})
 
@@ -23,7 +23,7 @@ tags: [Unity3D]
 
 ---
 
-## Unity3D 
+## Unity3D 设置
 在Unity引擎中播放声音，我们需要使用 **AudioSource** 组件来播放类型为 AudioClip 的文件。一旦我们将音频导入为 AudioClip ，我们需要将加载类型设置为“Decompress On Load”，以确保我们在运行时访问音频样本数据。
 ![AudioClip设置](003.png)
 
@@ -122,7 +122,7 @@ if (audioSource.time >= 128f && audioSource.time < 129f)
 
 到现在为止，我们可以知道音轨中某个时间点的频率分布。这对音频分析提供了数据支持。这意味着我们可以使用这些频率数据进行 **Spectral Flux (频谱流计算)**。[(wikipedia link)](https://en.wikipedia.org/wiki/Spectral_flux#:~:text=Spectral%20flux%20is%20a%20measure,spectrum%20from%20the%20previous%20frame.&text=The%20spectral%20flux%20can%20be,onset%20detection%2C%20among%20other%20things.)
 
-## 使用 Spectral Flux 进行基础检测
+## Spectral Flux 基础检测
 
 很多论文以及CSDN上面都有大量关于使用 Spectral Flux 来检测节拍的工作。在这里我将不会提出什么新的内容，只是单纯将解决方案应用到 C# 语言并在 Unity3D 里面实现一些效果。
 

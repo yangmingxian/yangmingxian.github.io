@@ -9,7 +9,7 @@ math: true
 
 > 读取数据是使用pandas做数据处理的第一步，数据源可以来自于各种地方，csv、XML、json等都是数据处理的常见数据源文件。而读取csv文件是数据处理中最为常用的一种。pandas提供了非常强力的支持，其提供了大量的参数以供user方便地读取csv文件。这些参数中，有的可能因为使用频率很低而经常被忽略，有的却很常见为读取数据提供了巨大的便利。这篇文章就为数据分析的csv数据读取做一个简要的汇总整理。
 
-read_csv中的基本参数
+## read_csv中的基本参数
 
 **filepath_or_buffer**
 数据输入的路径：可以是文件路径、可以是URL，也可以是实现read方法的任意对象。这个参数，就是我们输入的第一个参数。
@@ -111,7 +111,7 @@ Values to consider as False
 **memory_map : boolean, default False**
 如果使用的文件在内存内，那么直接map文件使用。使用这种方式可以避免文件再次进行IO操作。
 
-## read_csv中的空值处理相关参数
+### read_csv中的空值处理相关参数
 
 **na_values : scalar, str, list-like, or dict, default None**
 一组用于替换NA/NaN的值。如果传参，需要制定特定列的空值。默认为‘1.#IND’, ‘1.#QNAN’, ‘N/A’, ‘NA’, ‘NULL’, ‘NaN’, ‘nan’`.
@@ -129,7 +129,7 @@ Values to consider as False
 是否打印各种解析器的输出信息，例如：“非数值列中缺失值的数量”等。
 
 
-## read_csv中的时间处理相关参数
+### read_csv中的时间处理相关参数
 
 **parse_dates : boolean or list of ints or names or list of lists or dict, default False**
 boolean. True -> 解析索引
@@ -153,7 +153,7 @@ dict, e.g. {‘foo’ : [1, 3]} -> 将1,3列合并，并给合并后的列起名
 DD/MM格式的日期类型
 
 
-## read_csv中的分块读入相关参数
+### read_csv中的分块读入相关参数
 **iterator : boolean, default False**
 返回一个TextFileReader 对象，以便逐块处理文件。
  
@@ -162,7 +162,7 @@ DD/MM格式的日期类型
 
 
 
-## read_csv中的格式和压缩相关参数
+### read_csv中的格式和压缩相关参数
 **compression : {‘infer’, ‘gzip’, ‘bz2’, ‘zip’, ‘xz’, None}, default ‘infer’**
 直接使用磁盘上的压缩文件。如果使用infer参数，则使用 gzip, bz2, zip或者解压文件名中以‘.gz’, ‘.bz2’, ‘.zip’, or ‘xz’这些为后缀的文件，否则不解压。如果使用zip，那么ZIP包中国必须只包含一个文件。设置为None则不解压。
 新版本0.18.1版本支持zip和xz解压

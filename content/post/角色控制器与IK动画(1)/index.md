@@ -14,7 +14,7 @@ tags: [Unity3D]
 
 
 
-### **CharacterControllers and Rigidbodies**
+## CharacterControllers & Rigidbodies
 
 首先要说的就是两种最常见的第三人称角色控制方案：
 1. Unity3D 内置的 **CharacterController** 模块
@@ -41,8 +41,8 @@ GIF来源：[Youtube Link](https://www.youtube.com/watch?v=e94KggaEAr4)，有兴
 
 下面精简地介绍一下实现方式。
 
-### **基本移动设置**
-#### **输入**
+## 基本移动设置
+- **输入**  
 获取输入：摇杆 / WASD / ↑ ↓ ← →
 ```csharp
     vertical = Input.GetAxis("Vertical");
@@ -50,18 +50,20 @@ GIF来源：[Youtube Link](https://www.youtube.com/watch?v=e94KggaEAr4)，有兴
 ```
 
 
-#### **Camera**
+- **Camera**
 校正角色的移动方向，获取主相机的前和右方向，以便角色能够朝向相机对准的前方移动。
 ```csharp
     Vector3 correctedVertical = vertical * Camera.main.transform.forward;
     Vector3 correctedHorizontal = horizontal * Camera.main.transform.right;
 ```
-#### **Normalise**
+
+- **Normalise**
 合并校正后的输入并对其进行归一化，因此无论向哪个方向移动都是相同的。保持 Y 输入为 0，保持角色在Y轴的位置，以防角色陷入地板或者空气。
 ```csharp
     moveDirection = new Vector3((combinedInput).normalized.x, 0, (combinedInput).normalized.z);
 ```
-#### **旋转**
+
+- **旋转**
 ```csharp
     if(moveDirection!=Vector3.zero)
         {
@@ -70,14 +72,16 @@ GIF来源：[Youtube Link](https://www.youtube.com/watch?v=e94KggaEAr4)，有兴
             transform.rotation = targetRotation;
         }
 ```
-#### **速度**
+- **速度**
 ```csharp
     rigidbody.velocity=(moveDirection *moveSpeed);
 ```
 这里暂时直接赋值，后面会改变移动的方式。这个使用了rigidbody的物理属性，因此把它放到 **FixedUpdate()** 里面
 
-### **地板光线投射**
-![地板光线投射](012.png)
+## 地板光线投射
+
+![地板光线投射](012.png)  
+
 我们使用Raycast来进行探测，找到地板的位置并返回position信息。这里我只写了一条射线，从左脚的位置lpos向下发射，结果返回给leftHit.point。  
 项目中我使用了10条射线，左右脚各5条，一个在正中间，4个在周围。这可以方便我们根据射线的碰撞点的信息判断地形。
 因为这可以确定角色周围是否存在悬崖地形或者壁架，这样可以让角色播放一些摇摇晃晃的动画，让角色形象更生动起来。
@@ -88,7 +92,7 @@ GIF来源：[Youtube Link](https://www.youtube.com/watch?v=e94KggaEAr4)，有兴
                 lFPos = leftHit.point;
             }
 ```
-### **移动刚体**
+## 移动刚体
 然后将 RigidBody 位置移动到光线投射 Y 位置，仍在 FixedUpdate 里面实现。
 ```csharp
     floorMovement =  new Vector3(rb.position.x, FindFloor().y + floorOffsetY, rb.position.z);
@@ -109,13 +113,13 @@ GIF来源：[Youtube Link](https://www.youtube.com/watch?v=e94KggaEAr4)，有兴
 ![FootIK2](014.png)
 
 
-### **IK**
+## IK
 项目使用的是** Humanoid ** Rigs，其他rig，如generic不支持如下的解决方法。
 
 ![FootIK](gifs/010.gif)
 ![FootIK2](gifs/011.gif)
 
-#### **Foot IK**
+### Foot IK
 为了让脚适应地板，我们必须设置 IK Override的位置、旋转和权重。
 
 通过从脚部骨骼向下投射光线来找到位置和旋转。并使用 hit.point 作为位置，并与 hit.normal 一起旋转。
@@ -150,7 +154,7 @@ GIF来源：[Youtube Link](https://www.youtube.com/watch?v=e94KggaEAr4)，有兴
 ```
 ![Curve](015.png)
 
-#### **Head IK**
+### Head IK
 和脚的IK相比，头部IK相当简单。  
 一种非常简单的混合方法是获取 lookAtThis 位置和 Head 骨骼之间的距离。反转距离以获得良好的动画过渡。这里需要注意的就是调整头部以及身体的权重以获得更好的效果。
 ```csharp
@@ -160,20 +164,21 @@ GIF来源：[Youtube Link](https://www.youtube.com/watch?v=e94KggaEAr4)，有兴
 ![HeadIK](gifs/016.gif)
 
 
-#### **Hand IK**
+### Hand IK
 ![HeadIK](gifs/017.gif)
 类似于 Foot IK 部分，这次从肩部进行光线投射.
 
 这里应该再次基于动画中的 float 参数进行混合，并使用avatar mask，因此在进行全身动画时它不会影响移动手臂。
 
-### **其他的一些东西**
+## Outro
 这篇文章实现了角色控制的一些关于移动和交互的方面，其实一个比较完整的控制器还需要更多的工作。  
 
 接下来的工作还被期望实现人物的跳跃，爬坡，以及攀爬的功能，值得一提的是，我们应该再次把目光集中在procedural work上，而不是用动画堆砌出来生硬的角色。类似的例子：
-![Jump](gifs/028.gif)
+![Jump](gifs/018.gif)
 
 ------
-### Ref
+
+## Ref
 [Unity 5 Tutorial The Built-In IK System](https://www.youtube.com/watch?v=EggUxC5_lGE)
 
 [How to Move Characters In Unity 3D - Character Controllers Explained](https://www.youtube.com/watch?v=e94KggaEAr4)

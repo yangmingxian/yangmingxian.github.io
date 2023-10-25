@@ -5,9 +5,9 @@
     // 全局顶部边距
     --main-top-padding: 30px;
     // 全局卡片圆角
-    --card-border-radius: 25px;
+    --card-border-radius: 5px;
     // 标签云卡片圆角
-    --tag-border-radius: 8px;
+    --tag-border-radius: 5px;
     // 卡片间距
     --section-separation: 40px;
     // 全局字体大小
@@ -319,7 +319,7 @@ html {
     color: var(--card-text-color-main);
     background: var(--card-background);
     box-shadow: var(--shadow-l2);
-    border-radius: 30px;
+    border-radius: 5px;
     display: inline-block;
 }
 
@@ -516,8 +516,9 @@ kbd {
 .site-meta,
 .menu,
 .article-details,
-.widget-title.section-title,
-.sidebar.right-sidebar.sticky {
+.widget-title.section-title
+// ,.sidebar.right-sidebar.sticky 
+{
     // font-family: 'Long Cang', cursive;
     // font-family: 'Ma Shan Zheng', cursive;
     // font-family: 'Noto Sans SC', sans-serif;
@@ -526,7 +527,6 @@ kbd {
 }
 
 body,
-.widget--toc,
 .article-content {
     // font-family: 'Long Cang', cursive;
     // font-family: 'Ma Shan Zheng', cursive;
@@ -535,3 +535,33 @@ body,
     // font-family: 'Zhi Mang Xing', cursive;
 }
 
+.article-subtitle {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1em;
+}
+.article-title{
+    font-size: 1.3em;
+}
+
+.widget--toc {
+    font-family: 'Noto Serif SC', serif;
+    #TableOfContents {
+        max-height: 65vh;
+        ol,
+        ul {
+            list-style-type: none;
+        }
+        li {
+            margin: 10px 10px;
+            & > ol,
+            & > ul {
+                margin-top: 10px;
+                padding-left: 10px;
+                margin-bottom: -5px;
+                & > li:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

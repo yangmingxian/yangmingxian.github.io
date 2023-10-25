@@ -8,7 +8,7 @@ tags:
  - Linux
 ---
 
-## 获取Manjaro
+##  获取Manjaro
 
 直接进入官网进行下载[https://manjaro.org/](https://manjaro.org/)
 
