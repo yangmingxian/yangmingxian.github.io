@@ -1,3 +1,5 @@
-This is an example site used for solely for testing purposes. **It is not meant to be used as a template for your site**. 
+新网站**装修**中，预计**1个工作日**完成~  
+The new website is being renovated and is expected to be completed within 1 working day~
 
-To create a new site, please use the starter template: [CaiJimmy/hugo-theme-stack-starter](https://github.com/CaiJimmy/hugo-theme-stack-starter/)
+2023-10-25
+Mingxian Yang
