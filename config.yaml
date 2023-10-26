@@ -11,7 +11,7 @@ languages:
         title: YMX Blog
         weight: 1
         params:
-            description: Example description
+            description: AI and Game Design
 
     # zh-cn:
     #     languageName: 中文
@@ -43,7 +43,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:  # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
+    favicon: /favicon/favicon.ico  # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
         since: 2018
@@ -195,24 +195,27 @@ menu:
     main: []
 
     social:
+    
         - identifier: github
           name: GitHub
           url: https://github.com/yangmingxian
           params:
               icon: brand-github
-
-
+ 
+        
         - identifier: email
           name: Email
           url: mailto:yangmingxian2015@gmail.com
           params:
               icon: mail
+   
 
         - identifier: bilibili
           name: Bilibili
           url: https://space.bilibili.com/22212765
           params:
               icon: brand-bilibili
+       
 
 related:
     includeNewer: true
