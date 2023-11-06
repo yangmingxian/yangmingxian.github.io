@@ -4,7 +4,7 @@ author: Mingxian Yang
 date: 2023-10-07 12:10:00 +0800
 description: 对基础知识的掌握比较重要，有时候工作或是切实开发几年，脱离了基础知识，等到参加一些注重基础的面试时，啥也不会了。这里会总结一下游戏工程的基石；开发也中很多小小不言的问题，也会聚沙成塔。
 categories: [Learning Notes]
-tags: [Game Design]
+tags: [Game Design, 启示录]
 
 ---
 
