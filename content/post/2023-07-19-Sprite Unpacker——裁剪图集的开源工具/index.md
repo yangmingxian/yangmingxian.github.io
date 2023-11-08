@@ -8,9 +8,10 @@ tags: [Unity3D]
 render_with_liquid: false
 ---
 
-![识别结果截图](007.png)
 
+<!-- ![识别结果截图](007.png) -->
 
+<img src="007.png" alt="识别结果截图" style="width:802px;height:633px;">
 
 ## 前言  
 
@@ -19,15 +20,14 @@ render_with_liquid: false
 ## 其他事项
 
 - 为了使用Windows的拖拽（支持将文件直接拖入工具的窗口中），Unity3D引擎内运行时不支持拖拽，因此需要测试的话，需要打包出exe程序才可以。  
-- 为了实现任意拖入**.plist数据文件** 或者** .png文件**，这两个文件需要**同名**并且处于**同一文件夹目录**内，而分割的结果会在此新建一个同名文件夹。
+- 为了实现任意拖入**plist数据文件** 或者**png文件**，这两个文件需要**同名**并且处于**同一文件夹目录**内，而分割的结果会在此新建一个同名文件夹。
 - **由于是开源项目，严禁使用本工具进行商用目的**。
 
 
 ## 运行截图  
 
-![结果截图](https://yangmingxian.comassets/imgs/2023/007.png)
-![结果截图](https://yangmingxian.comassets/imgs/2023/008.png)
-![结果截图](https://yangmingxian.comassets/imgs/2023/009.png)
+![导入后的预览界面](008.png)
+![输出结果](009.png)
 
 ## 有关链接
 
