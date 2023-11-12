@@ -2,7 +2,7 @@
 title: 数据库基础知识点总结
 author: Mingxian Yang
 date: 2020-08-24 18:10:00 +0800
-categories: [Learning Notes]
+categories: [学习笔记]
 tags: [Database]
 ---
 

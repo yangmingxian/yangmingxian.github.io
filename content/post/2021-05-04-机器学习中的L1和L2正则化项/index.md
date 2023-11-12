@@ -2,7 +2,7 @@
 title: 机器学习中的L1和L2正则化项
 author: Mingxian Yang
 date: 2021-05-04 18:10:00 +0800
-categories: [Learning Notes]
+categories: [学习笔记]
 tags: [Machine Learning]
 math: true
 ---

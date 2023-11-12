@@ -2,8 +2,7 @@
 title: SVM算法总结
 author: Mingxian Yang
 date: 2021-05-05 18:10:00 +0800
-
-categories: [Learning Notes]
+categories: [学习笔记]
 tags: [Machine Learning]
 math: true
 ---

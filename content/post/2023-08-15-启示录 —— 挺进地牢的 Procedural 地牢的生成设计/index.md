@@ -3,7 +3,7 @@ title: 启示录 —— 挺进地牢的 Procedural 地牢的生成设计
 date: 2023-08-15 18:10:00 +0800
 description: 我做了很多关于Roguelike的尝试，我找了很多关于肉鸽的GDC，论坛，教程，也游玩了很多肉鸽游戏，文章从挺进地牢的设计上来讲一下肉鸽地图的地牢生成到底有哪些设计理念，希望它能给众多想做生成式肉鸽地图的开发者一个思路作为参考。
 image: ETG.jpg
-categories: [Game Design]
+categories: [游戏设计,启示录]
 tags: [启示录]
 ---
 

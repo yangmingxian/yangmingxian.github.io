@@ -3,8 +3,8 @@ title: 游戏开发基础 性能优化
 author: Mingxian Yang
 date: 2023-10-26 10:55:00 +0800
 description: 以 Unity3D 为例，整理了一些性能优化的主要内容和知识点。抛开 Unity 性能优化的方向是类似的，主要内容无非是CPU/GPU/内存/包体积等几个大方向的优化，道理是相通的，知识是可以迁移的，希望能对游戏领域的小伙伴有所帮助。文章部分正在整理和汇总中，格式和内容还有不完善，请见谅。
-categories: [Learning Notes]
-tags: [Game Design]
+categories: [学习笔记]
+tags: [游戏设计]
 ---
 
 

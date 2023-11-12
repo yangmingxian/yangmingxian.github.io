@@ -3,8 +3,7 @@ title: 深度神经网络的梯度不稳定问题--梯度消失与梯度爆炸
 description: 深度神经网络中的梯度不稳定性，前面层中的梯度或会消失，或会爆炸。
 date: 2021-05-06 18:10:00 +0800
 math: true
-categories:
- - Machine Learning
+categories: [学习笔记]
 tags:
  - Machine Learning
 ---

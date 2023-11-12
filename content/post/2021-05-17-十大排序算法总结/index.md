@@ -2,7 +2,7 @@
 title: 十大排序算法总结（附Python代码）
 author: Mingxian Yang
 date: 2021-05-17 18:10:00 +0800
-categories: [Learning Notes]
+categories: [学习笔记]
 tags: [Algorithm]
 ---
 

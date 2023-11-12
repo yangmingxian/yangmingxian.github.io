@@ -2,7 +2,7 @@
 title: 整理pandas的read_csv方法
 author: Mingxian Yang
 date: 2021-11-29 18:10:00 +0800
-categories: [Learning Notes]
+categories: [学习笔记]
 tags: [Python]
 math: true
 ---

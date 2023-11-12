@@ -2,7 +2,7 @@
 title: 残差网络详解
 author: Mingxian Yang
 date: 2020-09-13 18:10:00 +0800
-categories: [Learning Notes]
+categories: [学习笔记]
 tags: [Machine Learning]
 ---
 

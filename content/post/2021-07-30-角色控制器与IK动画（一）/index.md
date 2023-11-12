@@ -3,7 +3,7 @@ title: 角色控制器与IK动画（一）
 author: Mingxian Yang
 date: 2021-07-30 18:10:00 +0800
 description: 我最近在家里闭门造车，想自己尝试一下以前想尝试的新想法，所以在我最近正在做的Demo里面尝试了一下使用IK和Raycast的角色控制器，效果不错。我觉得这个的实现属于通用性很强的角色控制器的解决方案，所以先分享出来一部分。
-categories: [Game Design]
+categories: [游戏设计]
 tags: [Unity3D]
 ---
 

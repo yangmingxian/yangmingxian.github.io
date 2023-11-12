@@ -3,7 +3,7 @@ title: Sprite Unpacker——裁剪图集的开源工具
 author: Mingxian Yang
 date: 2023-07-19 18:10:00 +0800
 description: 我正在开发自己的独立游戏，在做资源迁移的时候遇到了Sprite图集恢复成单独Sprite图片的问题，所以我就顺手做了一个根据plist文件裁剪Sprite图集的小工具。我抽空写了这篇文章并且将工具开源分享出来，希望能对像我一样的独立开发者有所帮助。Have fun~
-categories: [Game Design]
+categories: [游戏设计]
 tags: [Unity3D]
 render_with_liquid: false
 ---
